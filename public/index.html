@@ -18,10 +18,56 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       font-family: 'Montserrat', sans-serif;
       padding: 40px 20px;
+      gap: 30px;
+    }
+
+    .page-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .page-title {
+      font-family: 'Cinzel', serif;
+      font-size: 36px;
+      font-weight: 600;
+      color: #c9ab5d;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 20px rgba(201, 171, 93, 0.3);
+    }
+
+    .page-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: rgba(201, 171, 93, 0.7);
+      letter-spacing: 4px;
+      font-style: italic;
+    }
+
+    .divider {
+      width: 120px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #c9ab5d, transparent);
+      margin: 20px auto;
+    }
+
+    .cards-wrapper {
+      display: flex;
+      flex-wrap: wrap;
       gap: 40px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .card-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
     }
 
     .card-container {
@@ -29,11 +75,11 @@
     }
 
     .card {
-      width: 400px;
-      height: 240px;
+      width: 420px;
+      height: 260px;
       background: linear-gradient(145deg, #0c0c0c 0%, #1a1a1a 50%, #0f0f0f 100%);
       border-radius: 16px;
-      padding: 30px;
+      padding: 28px;
       position: relative;
       box-shadow: 
         0 25px 50px rgba(0, 0, 0, 0.5),
@@ -55,11 +101,11 @@
     .card::before {
       content: '';
       position: absolute;
-      top: 15px;
-      left: 15px;
-      right: 15px;
-      bottom: 15px;
-      border: 1px solid rgba(201, 171, 93, 0.4);
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      border: 1px solid rgba(201, 171, 93, 0.35);
       border-radius: 8px;
       pointer-events: none;
     }
@@ -89,34 +135,54 @@
       text-align: center;
     }
 
+    .established {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 9px;
+      font-weight: 500;
+      color: rgba(201, 171, 93, 0.6);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
     .company-name {
       font-family: 'Cinzel', serif;
-      font-size: 28px;
+      font-size: 30px;
       font-weight: 600;
       color: #c9ab5d;
-      letter-spacing: 4px;
+      letter-spacing: 5px;
       text-transform: uppercase;
-      margin-bottom: 12px;
+      margin-bottom: 6px;
       text-shadow: 0 2px 10px rgba(201, 171, 93, 0.3);
+    }
+
+    .tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 11px;
+      font-weight: 400;
+      color: rgba(201, 171, 93, 0.7);
+      letter-spacing: 3px;
+      font-style: italic;
+      margin-bottom: 8px;
     }
 
     .ornament {
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 10px 0 16px;
+      margin: 8px 0 12px;
       color: #c9ab5d;
-      font-size: 20px;
+      font-size: 16px;
       letter-spacing: 3px;
     }
 
     .ornament::before,
     .ornament::after {
       content: '';
-      width: 50px;
+      width: 45px;
       height: 1px;
       background: linear-gradient(90deg, transparent, #c9ab5d);
-      margin: 0 12px;
+      margin: 0 10px;
     }
 
     .ornament::after {
@@ -125,46 +191,46 @@
 
     .owner-names {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 500;
       color: #c9ab5d;
       letter-spacing: 2px;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .profession {
       font-family: 'Montserrat', sans-serif;
-      font-size: 12px;
+      font-size: 10px;
       font-weight: 400;
       color: #c9ab5d;
       letter-spacing: 3px;
       text-transform: uppercase;
       opacity: 0.8;
-      margin-bottom: 20px;
+      margin-bottom: 14px;
     }
 
     .address {
       font-family: 'Montserrat', sans-serif;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 400;
       color: #c9ab5d;
       letter-spacing: 1px;
-      line-height: 1.8;
+      line-height: 1.7;
       opacity: 0.9;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     .contact-row {
       display: flex;
       justify-content: space-between;
       width: 100%;
-      padding: 0 10px;
+      padding: 0 8px;
       margin-top: auto;
     }
 
     .email, .phone {
       font-family: 'Montserrat', sans-serif;
-      font-size: 10px;
+      font-size: 9px;
       font-weight: 400;
       color: #c9ab5d;
       letter-spacing: 0.5px;
@@ -173,7 +239,7 @@
 
     .phone {
       text-align: right;
-      line-height: 1.6;
+      line-height: 1.5;
     }
 
     .card-back {
@@ -184,38 +250,38 @@
 
     .services-header {
       font-family: 'Cinzel', serif;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
       color: #c9ab5d;
       letter-spacing: 3px;
       text-transform: uppercase;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .services-subheader {
       font-family: 'Montserrat', sans-serif;
-      font-size: 10px;
+      font-size: 9px;
       font-weight: 400;
       color: #c9ab5d;
       letter-spacing: 2px;
       text-transform: uppercase;
-      opacity: 0.8;
-      margin-bottom: 18px;
+      opacity: 0.7;
+      margin-bottom: 14px;
     }
 
     .services-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 8px 30px;
+      gap: 6px 25px;
       flex: 1;
     }
 
     .service-item {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 500;
       color: #c9ab5d;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       display: flex;
       align-items: center;
     }
@@ -226,37 +292,200 @@
       height: 4px;
       background: #c9ab5d;
       border-radius: 50%;
-      margin-right: 10px;
+      margin-right: 8px;
       opacity: 0.6;
+    }
+
+    .certifications {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(201, 171, 93, 0.2);
+    }
+
+    .cert-badge {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 8px;
+      font-weight: 500;
+      color: rgba(201, 171, 93, 0.8);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border: 1px solid rgba(201, 171, 93, 0.3);
+      border-radius: 3px;
+    }
+
+    .back-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1px solid rgba(201, 171, 93, 0.2);
     }
 
     .back-email {
       font-family: 'Montserrat', sans-serif;
-      font-size: 10px;
+      font-size: 9px;
       font-weight: 400;
       color: #c9ab5d;
       letter-spacing: 0.5px;
       opacity: 0.85;
-      margin-top: auto;
-      padding-top: 12px;
-      border-top: 1px solid rgba(201, 171, 93, 0.2);
+    }
+
+    .website {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 9px;
+      font-weight: 400;
+      color: #c9ab5d;
+      letter-spacing: 0.5px;
+      opacity: 0.85;
     }
 
     .label {
       font-family: 'Montserrat', sans-serif;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 300;
-      color: rgba(201, 171, 93, 0.6);
+      color: rgba(201, 171, 93, 0.5);
       letter-spacing: 3px;
       text-transform: uppercase;
-      margin-bottom: 20px;
+    }
+
+    .features-section {
+      margin-top: 30px;
+      text-align: center;
+      max-width: 800px;
+    }
+
+    .features-title {
+      font-family: 'Cinzel', serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: #c9ab5d;
+      letter-spacing: 4px;
+      margin-bottom: 25px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .feature-item {
+      background: rgba(201, 171, 93, 0.05);
+      border: 1px solid rgba(201, 171, 93, 0.15);
+      border-radius: 10px;
+      padding: 20px 15px;
+      transition: all 0.3s ease;
+    }
+
+    .feature-item:hover {
+      background: rgba(201, 171, 93, 0.1);
+      border-color: rgba(201, 171, 93, 0.3);
+      transform: translateY(-3px);
+    }
+
+    .feature-icon {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .feature-title {
+      font-family: 'Cinzel', serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: #c9ab5d;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .feature-desc {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 300;
+      color: rgba(201, 171, 93, 0.7);
+      line-height: 1.5;
+    }
+
+    .quote-section {
+      margin-top: 40px;
+      text-align: center;
+      max-width: 600px;
+      padding: 30px;
+      border: 1px solid rgba(201, 171, 93, 0.15);
+      border-radius: 12px;
+      background: rgba(201, 171, 93, 0.03);
+    }
+
+    .quote-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: rgba(201, 171, 93, 0.9);
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .quote-author {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      color: rgba(201, 171, 93, 0.6);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(201, 171, 93, 0.1);
+    }
+
+    .footer-text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 300;
+      color: rgba(201, 171, 93, 0.4);
+      letter-spacing: 1px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .social-link {
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(201, 171, 93, 0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: #c9ab5d;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-link:hover {
+      background: rgba(201, 171, 93, 0.15);
+      border-color: rgba(201, 171, 93, 0.5);
+      transform: translateY(-2px);
     }
 
     @media (max-width: 480px) {
       .card {
         width: 340px;
-        height: 210px;
-        padding: 24px;
+        height: 220px;
+        padding: 22px;
       }
 
       .company-name {
@@ -265,65 +494,139 @@
       }
 
       .owner-names {
-        font-size: 15px;
+        font-size: 14px;
       }
 
       .services-grid {
-        gap: 6px 20px;
+        gap: 5px 15px;
       }
 
       .service-item {
-        font-size: 11px;
+        font-size: 10px;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .page-title {
+        font-size: 24px;
       }
     }
   </style>
 </head>
 <body>
-  <p class="label">Front Side</p>
-  <div class="card-container">
-    <div class="card">
-      <div class="card-front">
-        <h1 class="company-name">Elite Construct</h1>
-        <div class="ornament">
-          <span>&#10041;</span>
+  <div class="page-header">
+    <h1 class="page-title">Elite Construct</h1>
+    <p class="page-tagline">"Building Dreams, Crafting Excellence"</p>
+    <div class="divider"></div>
+  </div>
+
+  <div class="cards-wrapper">
+    <div class="card-section">
+      <p class="label">Front Side</p>
+      <div class="card-container">
+        <div class="card">
+          <div class="card-front">
+            <span class="established">Est. 2008</span>
+            <h1 class="company-name">Elite Construct</h1>
+            <p class="tagline">"Quality Without Compromise"</p>
+            <div class="ornament">
+              <span>&#10041;</span>
+            </div>
+            <h2 class="owner-names">James Harrison & Oliver Stone</h2>
+            <p class="profession">Master Builders & Contractors</p>
+            <p class="address">
+              42 Oakwood Lane<br>
+              Southbrook Village, Hampshire
+            </p>
+            <div class="contact-row">
+              <span class="email">contact@eliteconstruct.co.uk</span>
+              <span class="phone">
+                07845 123 456<br>
+                07912 654 321
+              </span>
+            </div>
+          </div>
         </div>
-        <h2 class="owner-names">James Harrison & Oliver Stone</h2>
-        <p class="profession">Master Builders</p>
-        <p class="address">
-          42 Oakwood Lane<br>
-          Southbrook Village
-        </p>
-        <div class="contact-row">
-          <span class="email">contact@eliteconstruct.co.uk</span>
-          <span class="phone">
-            07845 123 456<br>
-            07912 654 321
-          </span>
+      </div>
+    </div>
+
+    <div class="card-section">
+      <p class="label">Back Side</p>
+      <div class="card-container">
+        <div class="card">
+          <div class="card-back">
+            <h3 class="services-header">Complete Building Services</h3>
+            <p class="services-subheader">Extension & Renovation Specialists</p>
+            <div class="services-grid">
+              <span class="service-item">Home Extensions</span>
+              <span class="service-item">Rendering / K-Rend</span>
+              <span class="service-item">Foundation Works</span>
+              <span class="service-item">Design & Planning</span>
+              <span class="service-item">Brickwork & Masonry</span>
+              <span class="service-item">Electrical Certification</span>
+              <span class="service-item">Interior Plastering</span>
+              <span class="service-item">Structural Engineering</span>
+              <span class="service-item">Floor Screeding</span>
+              <span class="service-item">Gas Safe Services</span>
+              <span class="service-item">Loft Conversions</span>
+              <span class="service-item">Roofing & Tiling</span>
+            </div>
+            <div class="certifications">
+              <span class="cert-badge">Gas Safe</span>
+              <span class="cert-badge">NICEIC</span>
+              <span class="cert-badge">Fully Insured</span>
+              <span class="cert-badge">TrustMark</span>
+            </div>
+            <div class="back-footer">
+              <span class="back-email">contact@eliteconstruct.co.uk</span>
+              <span class="website">www.eliteconstruct.co.uk</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <p class="label">Back Side</p>
-  <div class="card-container">
-    <div class="card">
-      <div class="card-back">
-        <h3 class="services-header">Complete Building Services</h3>
-        <p class="services-subheader">Extension Specialists</p>
-        <div class="services-grid">
-          <span class="service-item">Home Extensions</span>
-          <span class="service-item">Rendering / K-Rend</span>
-          <span class="service-item">Foundation Works</span>
-          <span class="service-item">Design & Planning</span>
-          <span class="service-item">Brickwork & Masonry</span>
-          <span class="service-item">Electrical Certification</span>
-          <span class="service-item">Interior Plastering</span>
-          <span class="service-item">Structural Engineering</span>
-          <span class="service-item">Floor Screeding</span>
-          <span class="service-item">Gas Safe Services</span>
-        </div>
-        <p class="back-email">contact@eliteconstruct.co.uk</p>
+  <div class="features-section">
+    <h2 class="features-title">Why Choose Us</h2>
+    <div class="features-grid">
+      <div class="feature-item">
+        <div class="feature-icon">🏆</div>
+        <h3 class="feature-title">15+ Years</h3>
+        <p class="feature-desc">Industry experience with hundreds of completed projects</p>
       </div>
+      <div class="feature-item">
+        <div class="feature-icon">✓</div>
+        <h3 class="feature-title">Free Quotes</h3>
+        <p class="feature-desc">No obligation estimates for all project types</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🛡️</div>
+        <h3 class="feature-title">Fully Insured</h3>
+        <p class="feature-desc">Complete public liability coverage on all works</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">⭐</div>
+        <h3 class="feature-title">5-Star Reviews</h3>
+        <p class="feature-desc">Trusted by homeowners across Hampshire</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote-section">
+    <p class="quote-text">"From foundation to finish, we bring your vision to life with precision, passion, and an unwavering commitment to quality craftsmanship."</p>
+    <p class="quote-author">— James Harrison, Founder</p>
+  </div>
+
+  <div class="footer">
+    <p class="footer-text">Serving Hampshire & Surrounding Areas</p>
+    <div class="social-links">
+      <a href="#" class="social-link" title="Facebook">f</a>
+      <a href="#" class="social-link" title="Instagram">in</a>
+      <a href="#" class="social-link" title="LinkedIn">Li</a>
+      <a href="#" class="social-link" title="Email">@</a>
     </div>
   </div>
 </body>
