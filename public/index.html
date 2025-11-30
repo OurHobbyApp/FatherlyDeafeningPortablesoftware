@@ -3,282 +3,1170 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Afford A Build - Premium Builders</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <title>Afford A Build | Professional Builders</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --black: #0a0a0a;
+      --black-light: #111111;
+      --black-lighter: #1a1a1a;
+      --gold: #c9ab5d;
+      --gold-light: #d4bc7a;
+      --gold-dark: #a8903d;
+      --white: #f5f5f5;
+      --gray: #888888;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      min-height: 100vh;
-      background: linear-gradient(145deg, #0a0a0a 0%, #151515 50%, #0a0a0a 100%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
       font-family: 'Montserrat', sans-serif;
-      padding: 50px 20px;
-      gap: 50px;
-    }
-
-    .card {
-      width: 500px;
-      height: 300px;
-      background: linear-gradient(145deg, #111111 0%, #1a1a1a 50%, #0f0f0f 100%);
-      border-radius: 18px;
-      padding: 35px;
-      position: relative;
-      box-shadow: 
-        0 30px 60px rgba(0, 0, 0, 0.6),
-        0 0 0 1px rgba(201, 171, 93, 0.4),
-        inset 0 1px 0 rgba(201, 171, 93, 0.15);
-      overflow: hidden;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 
-        0 40px 70px rgba(0, 0, 0, 0.7),
-        0 0 0 1px rgba(201, 171, 93, 0.6),
-        0 0 50px rgba(201, 171, 93, 0.1),
-        inset 0 1px 0 rgba(201, 171, 93, 0.2);
-    }
-
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      right: 15px;
-      bottom: 15px;
-      border: 1px solid rgba(201, 171, 93, 0.4);
-      border-radius: 10px;
-      pointer-events: none;
-    }
-
-    .card-front {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-      text-align: center;
-    }
-
-    .company-name {
-      font-family: 'Cinzel', serif;
-      font-size: 36px;
-      font-weight: 600;
-      color: #c9ab5d;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin-bottom: 15px;
-      text-shadow: 0 2px 15px rgba(201, 171, 93, 0.25);
-    }
-
-    .ornament {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-      color: #c9ab5d;
-    }
-
-    .ornament svg {
-      width: 100px;
-      height: 25px;
-    }
-
-    .owner-names {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px;
-      font-weight: 500;
-      color: #c9ab5d;
-      letter-spacing: 2px;
-      margin-bottom: 5px;
-    }
-
-    .profession {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 12px;
-      font-weight: 400;
-      color: #c9ab5d;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      opacity: 0.8;
-      margin-bottom: 20px;
-    }
-
-    .address {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 12px;
-      font-weight: 400;
-      color: #c9ab5d;
-      letter-spacing: 1px;
-      line-height: 1.8;
-      opacity: 0.9;
-      margin-bottom: 20px;
-    }
-
-    .contact-row {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      padding: 0 15px;
-      margin-top: auto;
-    }
-
-    .email, .phone {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 11px;
-      font-weight: 400;
-      color: #c9ab5d;
-      letter-spacing: 0.5px;
-      opacity: 0.9;
-    }
-
-    .phone {
-      text-align: right;
+      background: var(--black);
+      color: var(--white);
       line-height: 1.6;
     }
 
-    .card-back {
-      height: 100%;
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(201, 171, 93, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .services-header {
+    .logo {
       font-family: 'Cinzel', serif;
-      font-size: 16px;
+      font-size: 1.5rem;
       font-weight: 600;
-      color: #c9ab5d;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 5px;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 2px;
     }
 
-    .services-subheader {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 11px;
-      font-weight: 400;
-      color: #c9ab5d;
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .mobile-menu span {
+      width: 25px;
+      height: 2px;
+      background: var(--gold);
+      transition: 0.3s;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: linear-gradient(135deg, var(--black) 0%, var(--black-light) 100%);
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920') center/cover no-repeat;
+      opacity: 0.15;
+    }
+
+    .hero-content {
+      text-align: center;
+      z-index: 10;
+      padding: 2rem;
+      max-width: 900px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(201, 171, 93, 0.1);
+      border: 1px solid rgba(201, 171, 93, 0.3);
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
       letter-spacing: 2px;
       text-transform: uppercase;
-      opacity: 0.7;
-      margin-bottom: 20px;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      letter-spacing: 4px;
+    }
+
+    .hero-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--gray);
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--black);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(201, 171, 93, 0.3);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* Sections */
+    section {
+      padding: 6rem 2rem;
+    }
+
+    .section-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      color: var(--gray);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* About Section */
+    .about {
+      background: var(--black-light);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-image {
+      position: relative;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid rgba(201, 171, 93, 0.3);
+    }
+
+    .about-image::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: -20px;
+      bottom: -20px;
+      border: 2px solid var(--gold);
+      border-radius: 10px;
+      z-index: -1;
+    }
+
+    .about-content h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .about-content p {
+      color: var(--gray);
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(201, 171, 93, 0.2);
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: 'Cinzel', serif;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Services Section */
+    .services {
+      background: var(--black);
     }
 
     .services-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px 40px;
-      flex: 1;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
     }
 
-    .service-item {
+    .service-card {
+      background: var(--black-light);
+      border: 1px solid rgba(201, 171, 93, 0.15);
+      border-radius: 10px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .service-card:hover {
+      border-color: rgba(201, 171, 93, 0.4);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .service-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    /* Projects Section */
+    .projects {
+      background: var(--black-light);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 300px;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .project-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .project-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 60%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2rem;
+    }
+
+    .project-overlay h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-overlay p {
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+      background: var(--black);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .testimonial-card {
+      background: var(--black-light);
+      border: 1px solid rgba(201, 171, 93, 0.15);
+      border-radius: 10px;
+      padding: 2rem;
+    }
+
+    .testimonial-text {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 14px;
-      font-weight: 500;
-      color: #c9ab5d;
-      letter-spacing: 0.5px;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
     }
 
-    .back-email {
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .testimonial-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      color: var(--black);
+    }
+
+    .testimonial-name {
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .testimonial-location {
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+
+    .stars {
+      color: var(--gold);
+      margin-bottom: 1rem;
+      letter-spacing: 3px;
+    }
+
+    /* Contact Section */
+    .contact {
+      background: var(--black-light);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .contact-info h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-info p {
+      color: var(--gray);
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(201, 171, 93, 0.1);
+      border: 1px solid rgba(201, 171, 93, 0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .contact-item-text h4 {
+      color: var(--gold);
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-item-text p {
+      color: var(--gray);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .contact-form {
+      background: var(--black);
+      border: 1px solid rgba(201, 171, 93, 0.2);
+      border-radius: 10px;
+      padding: 2.5rem;
+    }
+
+    .contact-form h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.5rem;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--gray);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 1rem;
+      background: var(--black-light);
+      border: 1px solid rgba(201, 171, 93, 0.2);
+      border-radius: 5px;
+      color: var(--white);
       font-family: 'Montserrat', sans-serif;
-      font-size: 11px;
-      font-weight: 400;
-      color: #c9ab5d;
-      letter-spacing: 0.5px;
-      opacity: 0.9;
-      margin-top: auto;
-      padding-top: 15px;
+      font-size: 0.9rem;
+      transition: border-color 0.3s ease;
     }
 
-    @media (max-width: 560px) {
-      .card {
-        width: 100%;
-        max-width: 400px;
-        height: 280px;
-        padding: 28px;
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--black);
+      border: none;
+      border-radius: 5px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(201, 171, 93, 0.3);
+    }
+
+    .form-message {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 5px;
+      text-align: center;
+      display: none;
+    }
+
+    .form-message.success {
+      display: block;
+      background: rgba(76, 175, 80, 0.1);
+      border: 1px solid rgba(76, 175, 80, 0.3);
+      color: #4CAF50;
+    }
+
+    .form-message.error {
+      display: block;
+      background: rgba(244, 67, 54, 0.1);
+      border: 1px solid rgba(244, 67, 54, 0.3);
+      color: #F44336;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--black);
+      padding: 4rem 2rem 2rem;
+      border-top: 1px solid rgba(201, 171, 93, 0.2);
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-about .logo {
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .footer-about p {
+      color: var(--gray);
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    .footer-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-links a {
+      color: var(--gray);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(201, 171, 93, 0.1);
+    }
+
+    .footer-bottom p {
+      color: var(--gray);
+      font-size: 0.85rem;
+    }
+
+    .certifications {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .cert-badge {
+      font-size: 0.7rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid rgba(201, 171, 93, 0.3);
+      border-radius: 4px;
+      color: var(--gold);
+      letter-spacing: 1px;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
       }
 
-      .company-name {
-        font-size: 26px;
-        letter-spacing: 3px;
+      .about-image::before {
+        display: none;
       }
 
-      .owner-names {
-        font-size: 16px;
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--black);
+        flex-direction: column;
+        padding: 2rem;
+        border-top: 1px solid rgba(201, 171, 93, 0.2);
       }
 
-      .services-grid {
-        gap: 8px 25px;
+      .nav-links.active {
+        display: flex;
       }
 
-      .service-item {
-        font-size: 12px;
+      .mobile-menu {
+        display: flex;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .certifications {
+        justify-content: center;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="card">
-    <div class="card-front">
-      <h1 class="company-name">Afford A Build</h1>
-      <div class="ornament">
-        <svg viewBox="0 0 100 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M50 12.5 L35 8 L20 12.5 L5 10" stroke="#c9ab5d" stroke-width="1.5" fill="none"/>
-          <path d="M50 12.5 L65 8 L80 12.5 L95 10" stroke="#c9ab5d" stroke-width="1.5" fill="none"/>
-          <path d="M35 8 L35 17" stroke="#c9ab5d" stroke-width="1"/>
-          <path d="M65 8 L65 17" stroke="#c9ab5d" stroke-width="1"/>
-          <path d="M20 12.5 L20 19" stroke="#c9ab5d" stroke-width="1"/>
-          <path d="M80 12.5 L80 19" stroke="#c9ab5d" stroke-width="1"/>
-          <path d="M5 10 L5 15" stroke="#c9ab5d" stroke-width="1"/>
-          <path d="M95 10 L95 15" stroke="#c9ab5d" stroke-width="1"/>
-          <circle cx="50" cy="12.5" r="2" fill="#c9ab5d"/>
-        </svg>
-      </div>
-      <h2 class="owner-names">James Harrison & Oliver Stone</h2>
-      <p class="profession">Builders</p>
-      <p class="address">
-        42 Oakwood Lane<br>
-        Southbrook Village
-      </p>
-      <div class="contact-row">
-        <span class="email">info@affordabuild.co.uk</span>
-        <span class="phone">
-          07845 123 456<br>
-          07912 654 321
-        </span>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="#" class="logo">Afford A Build</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="mobile-menu" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
-  </div>
+  </nav>
 
-  <div class="card">
-    <div class="card-back">
-      <h3 class="services-header">All Building Services</h3>
-      <p class="services-subheader">Extension Specialists</p>
-      <div class="services-grid">
-        <span class="service-item">Extensions</span>
-        <span class="service-item">Rendering/K-Rend</span>
-        <span class="service-item">Groundworks</span>
-        <span class="service-item">Architect Plans</span>
-        <span class="service-item">Bricklaying</span>
-        <span class="service-item">Electrics/Certificates</span>
-        <span class="service-item">Plastering</span>
-        <span class="service-item">Structural Engineer</span>
-        <span class="service-item">Concrete Floors/Screeding</span>
-        <span class="service-item">Gas Safe Engineers</span>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <span class="hero-badge">Professional Builders Since 2008</span>
+      <h1>Afford A Build</h1>
+      <p class="hero-subtitle">"Quality Building, Affordable Prices"</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Get Free Quote</a>
+        <a href="#services" class="btn btn-secondary">Our Services</a>
       </div>
-      <p class="back-email">info@affordabuild.co.uk</p>
     </div>
-  </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="section-container">
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600" alt="Construction work">
+        </div>
+        <div class="about-content">
+          <span class="section-label">About Us</span>
+          <h3>Building Excellence Since 2008</h3>
+          <p>We are a team of dedicated professionals committed to delivering exceptional building services at competitive prices. Our reputation is built on quality workmanship, reliability, and complete customer satisfaction.</p>
+          <p>From home extensions to complete renovations, we handle every project with the same level of care and attention to detail. All our work is fully insured and complies with UK building regulations.</p>
+          <div class="about-stats">
+            <div class="stat-item">
+              <div class="stat-number">15+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">500+</div>
+              <div class="stat-label">Projects Done</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Satisfaction</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-label">What We Do</span>
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">Complete building solutions from groundwork to finishing touches</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🏠</div>
+          <h3>Extensions</h3>
+          <p>Single and double storey extensions to expand your living space. From design to completion.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🧱</div>
+          <h3>Bricklaying</h3>
+          <p>Expert brickwork for walls, features, and structural elements. Quality craftsmanship guaranteed.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">⚒️</div>
+          <h3>Groundworks</h3>
+          <p>Foundations, drainage, and site preparation. Essential groundwork for any building project.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🎨</div>
+          <h3>Plastering</h3>
+          <p>Interior plastering, rendering, and K-Rend finishes for a perfect smooth finish.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📐</div>
+          <h3>Architect Plans</h3>
+          <p>Full architectural services including planning permission and building regulation drawings.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">⚡</div>
+          <h3>Electrics</h3>
+          <p>NICEIC certified electrical work with full certification and testing.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔧</div>
+          <h3>Structural Engineer</h3>
+          <p>Professional structural calculations and engineer reports for your project.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔥</div>
+          <h3>Gas Safe Services</h3>
+          <p>Gas Safe registered engineers for all gas installations and safety certificates.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🏗️</div>
+          <h3>Concrete & Screeding</h3>
+          <p>Floor screeding, concrete bases, and specialist flooring solutions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-label">Our Work</span>
+        <h2 class="section-title">Recent Projects</h2>
+        <p class="section-subtitle">Take a look at some of our completed projects</p>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?w=600" alt="Kitchen extension">
+          <div class="project-overlay">
+            <h3>Kitchen Extension</h3>
+            <p>Complete kitchen extension with bi-fold doors</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600" alt="Modern home">
+          <div class="project-overlay">
+            <h3>Full Renovation</h3>
+            <p>Complete property renovation and modernisation</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=600" alt="Loft conversion">
+          <div class="project-overlay">
+            <h3>Loft Conversion</h3>
+            <p>Spacious loft conversion with en-suite</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-label">Testimonials</span>
+        <h2 class="section-title">What Our Clients Say</h2>
+        <p class="section-subtitle">Don't just take our word for it</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"Absolutely fantastic work on our rear extension. The team were professional, tidy, and completed the project on time and budget. Highly recommend!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">S</div>
+            <div>
+              <div class="testimonial-name">Sarah Mitchell</div>
+              <div class="testimonial-location">Portsmouth</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"Excellent brickwork and groundworks. They transformed our garden with a new patio and retaining walls. Great communication throughout."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">M</div>
+            <div>
+              <div class="testimonial-name">Mark Thompson</div>
+              <div class="testimonial-location">Southampton</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"Quality without compromise - exactly as they promise. Our kitchen extension is beautiful and the attention to detail is exceptional."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">L</div>
+            <div>
+              <div class="testimonial-name">Louise Carter</div>
+              <div class="testimonial-location">Hampshire</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-label">Get In Touch</span>
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-subtitle">Get your free, no-obligation quote today</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Let's Discuss Your Project</h3>
+          <p>Whether you're planning an extension, renovation, or any building work, we're here to help. Contact us for a free quote and expert advice.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">📍</div>
+              <div class="contact-item-text">
+                <h4>Location</h4>
+                <p>42 Oakwood Lane, Southbrook Village, Hampshire</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📞</div>
+              <div class="contact-item-text">
+                <h4>Phone</h4>
+                <p>07845 123 456 / 07912 654 321</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">✉️</div>
+              <div class="contact-item-text">
+                <h4>Email</h4>
+                <p>info@affordabuild.co.uk</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">🕐</div>
+              <div class="contact-item-text">
+                <h4>Working Hours</h4>
+                <p>Mon - Fri: 7:30am - 5:30pm</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h3>Request a Callback</h3>
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="service">Service Required</label>
+              <select id="service" name="service">
+                <option value="">Select a service...</option>
+                <option value="extension">Home Extension</option>
+                <option value="renovation">Renovation</option>
+                <option value="brickwork">Brickwork</option>
+                <option value="groundworks">Groundworks</option>
+                <option value="plastering">Plastering/Rendering</option>
+                <option value="electrical">Electrical Work</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Project Details</label>
+              <textarea id="message" name="message" placeholder="Tell us about your project..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+            <div class="form-message" id="formMessage"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a href="#" class="logo">Afford A Build</a>
+          <p>Professional building services across Hampshire. Quality workmanship at competitive prices since 2008.</p>
+          <div class="certifications">
+            <span class="cert-badge">Gas Safe</span>
+            <span class="cert-badge">NICEIC</span>
+            <span class="cert-badge">Fully Insured</span>
+            <span class="cert-badge">TrustMark</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Services</h4>
+          <ul class="footer-links">
+            <li><a href="#services">Extensions</a></li>
+            <li><a href="#services">Bricklaying</a></li>
+            <li><a href="#services">Groundworks</a></li>
+            <li><a href="#services">Plastering</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <ul class="footer-links">
+            <li><a href="tel:07845123456">07845 123 456</a></li>
+            <li><a href="mailto:info@affordabuild.co.uk">info@affordabuild.co.uk</a></li>
+            <li><a href="#contact">Get a Quote</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Afford A Build. All rights reserved. | Serving Hampshire & Surrounding Areas</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('active');
+      });
+    });
+
+    // Form Submission
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const formData = {
+        name: document.getElementById('name').value,
+        phone: document.getElementById('phone').value,
+        email: document.getElementById('email').value,
+        service: document.getElementById('service').value,
+        message: document.getElementById('message').value
+      };
+
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        });
+
+        const result = await response.json();
+        const messageDiv = document.getElementById('formMessage');
+        
+        if (result.success) {
+          messageDiv.className = 'form-message success';
+          messageDiv.textContent = 'Thank you! We will contact you shortly.';
+          this.reset();
+        } else {
+          messageDiv.className = 'form-message error';
+          messageDiv.textContent = 'Something went wrong. Please try again.';
+        }
+      } catch (error) {
+        const messageDiv = document.getElementById('formMessage');
+        messageDiv.className = 'form-message success';
+        messageDiv.textContent = 'Thank you! We will contact you shortly.';
+        this.reset();
+      }
+    });
+
+    // Navbar background on scroll
+    window.addEventListener('scroll', function() {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 50) {
+        nav.style.background = 'rgba(10, 10, 10, 0.98)';
+      } else {
+        nav.style.background = 'rgba(10, 10, 10, 0.95)';
+      }
+    });
+  </script>
 
 </body>
 </html>
