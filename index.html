@@ -1,127 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Afford A Build</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-  <style>
-    /* Custom CSS directly from uploaded index.html */
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      background-color: #000;
-      color: #e4e4e4;
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    h1, h2, h3, h4 {
-      font-family: 'Cinzel', serif;
-      color: #cba452;
-    }
-    header.hero {
-      background: linear-gradient(to bottom right, #000000dd, #000000ee), url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1950&q=80') center/cover;
-      padding: 6rem 2rem;
-      text-align: center;
-      color: white;
-    }
-    section {
-      padding: 4rem 2rem;
-    }
-    .gold-border {
-      border: 1px solid #cba452;
-      padding: 1rem;
-      border-radius: 0.5rem;
-      background-color: #111;
-    }
-    footer {
-      background: #111;
-      color: #aaa;
-      text-align: center;
-      padding: 2rem;
-    }
-    a {
-      color: #cba452;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .btn-gold {
-      background-color: #cba452;
-      color: #000;
-      border: none;
-    }
-    .btn-gold:hover {
-      background-color: #dcbc65;
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
-  <header class="hero">
-    <h1>Afford A Build</h1>
-    <p>Groundwork • Foundations • Drainage • Concrete</p>
-    <a href="#contact" class="btn btn-gold mt-4">Request a Callback</a>
-  </header>
 
-  <section id="services">
-    <div class="container">
-      <h2 class="text-center mb-5">Our Services</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="gold-border">
-            <h3>Excavation</h3>
-            <p>Precision trenching and digging for residential and commercial sites.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="gold-border">
-            <h3>Concrete Bases</h3>
-            <p>Raft slabs, pads, and structural pours done right — every time.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="gold-border">
-            <h3>Drainage</h3>
-            <p>Surface water, foul systems, and utility trenching with inspection points.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<div data-include="components/header.html"></div>
 
-  <section id="compliance" class="bg-dark text-light">
-    <div class="container">
-      <h2 class="text-center mb-4">Built to Standard</h2>
-      <p class="text-center">We operate with full compliance to UK Building Regulations and Local Authority standards.</p>
-    </div>
-  </section>
+<!-- Page content goes here -->
 
-  <section id="contact">
-    <div class="container">
-      <h2 class="text-center">Contact Us</h2>
-      <form class="mt-4">
-        <div class="mb-3">
-          <label for="name" class="form-label">Name</label>
-          <input type="text" class="form-control" id="name" required>
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" required>
-        </div>
-        <button type="submit" class="btn btn-gold">Send</button>
-      </form>
-    </div>
-  </section>
+<div data-include="components/footer.html"></div>
+<script src="assets/js/includes.js"></script>
 
-  <footer>
-    <p>&copy; Afford A Build. All rights reserved.</p>
-  </footer>
 </body>
 </html>
