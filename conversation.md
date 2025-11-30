@@ -1,0 +1,1 @@
+User requested to see a live preview of the elegant black and gold website. The uploaded index.html file includes all styling and JavaScript features such as modal, carousel, callback form, and scroll animations.
