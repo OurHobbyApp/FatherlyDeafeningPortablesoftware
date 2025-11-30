@@ -1151,9 +1151,8 @@
         }
       } catch (error) {
         const messageDiv = document.getElementById('formMessage');
-        messageDiv.className = 'form-message success';
-        messageDiv.textContent = 'Thank you! We will contact you shortly.';
-        this.reset();
+        messageDiv.className = 'form-message error';
+        messageDiv.textContent = 'Connection error. Please call us directly.';
       }
     });
 

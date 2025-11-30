@@ -1,20 +1,32 @@
-# Elite Construct Business Card
+# Afford A Build Website
 
 ## Overview
-A stylish digital business card display featuring an elegant black background with gold typography. All information displayed is fictional and for demonstration purposes only.
+A professional website for Afford A Build, a building and construction company. Features a black and gold color scheme with modern, elegant styling.
 
 ## Project Structure
-- `server.js` - Express server running on port 5000
-- `public/index.html` - Main HTML file with the business card design
-- `package.json` - Node.js dependencies
+- `server.js` - Express server running on port 5000, handles static files and contact form API
+- `public/index.html` - Main website with all sections
+- `contacts.json` - Stores contact form submissions
 
-## Design Features
-- Black gradient background
-- Elegant gold typography using Cinzel and Cormorant Garamond fonts
-- Hover animations with subtle glow effects
-- Shimmer animation effect
-- Responsive design for mobile devices
-- Two-sided card display (front and back)
+## Features
+- **Hero Section** - Full-screen intro with background image
+- **About Section** - Company info with stats (15+ years, 500+ projects)
+- **Services Section** - 9 service cards (Extensions, Bricklaying, Groundworks, etc.)
+- **Projects Gallery** - Showcase of completed work
+- **Testimonials** - Customer reviews with 5-star ratings
+- **Contact Form** - Functional form that saves to JSON file
+- **Navigation** - Sticky nav with mobile hamburger menu
+- **Footer** - Links, certifications, and contact info
+
+## Design
+- Black background (#0a0a0a)
+- Gold accent color (#c9ab5d)
+- Fonts: Cinzel (headings), Cormorant Garamond (accents), Montserrat (body)
+- Fully responsive for mobile devices
+
+## API Endpoints
+- `POST /api/contact` - Submit contact form
+- `GET /api/contacts` - View all submissions (admin)
 
 ## Running the Project
 The server runs automatically via the configured workflow on port 5000.
