@@ -1,6 +1,23 @@
 <div data-include="../components/header.html"></div>
 
-<h1>Contact Us</h1>
+<div class="container py-5" style="max-width:700px;">
+  <h1>Contact Us</h1>
+  <p class="lead mb-4">Send us a message and we’ll get back to you.</p>
+
+  <form>
+    <div class="mb-3">
+      <label class="form-label">Name</label>
+      <input type="text" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="email" class="form-control" required>
+    </div>
+
+    <button class="btn-gold w-100 mt-3">Send</button>
+  </form>
+</div>
 
 <div data-include="../components/footer.html"></div>
 <script src="../assets/js/includes.js"></script>

@@ -1,4 +1,39 @@
-html {
-  height: 100%;
-  width: 100%;
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #000;
+  color: #e4e4e4;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
 }
+
+h1, h2, h3 {
+  font-family: 'Cinzel', serif;
+  color: #cba452;
+}
+
+a { color: #cba452; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Reusable Card Style */
+.gold-card {
+  border: 1px solid #cba452;
+  background: #111;
+  padding: 1.5rem;
+  border-radius: .75rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+  transition: transform 0.2s ease;
+}
+.gold-card:hover { transform: translateY(-4px); }
+
+.btn-gold {
+  background: linear-gradient(135deg,#cba452,#f3d08d);
+  border: none;
+  padding: .75rem 2rem;
+  font-weight: 600;
+  color: #000;
+  border-radius: 0.4rem;
+}
+.btn-gold:hover { background: linear-gradient(135deg,#e8c46c,#ffdca8); }
+
